@@ -44,7 +44,8 @@ jobs:
 
       - name: Extract source code
         run: unzip -o threadline-app.zip
-
+      - name: Enable AndroidX
+        run: echo "android.useAndroidX=true" >> threadline-app/gradle.properties
       - name: Verify project files
         run: |
           test -f threadline-app/settings.gradle.kts
